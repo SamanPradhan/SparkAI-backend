@@ -133,7 +133,7 @@ questionRouter.get("/", async (req, res) => {
 /**
  * @swagger
  * https://sparai-backend-app.onrender.com/questions/update/:id:
- *   patch:
+ *   put:
  *     summary: Updateing a question
  *     description: Updating a question with it's id from database via PATCH route
  *     tags:
@@ -174,7 +174,7 @@ questionRouter.get("/", async (req, res) => {
  *           example:
  *             error: "Something went wrong"
  */
-questionRouter.patch("/update/:id", async (req, res) => {
+questionRouter.put("/update/:id", async (req, res) => {
   let id = req.params.id;
   try {
     await questionModel.findByIdAndUpdate(id, req.body);
@@ -189,7 +189,7 @@ questionRouter.patch("/update/:id", async (req, res) => {
 /**
  * @swagger
  * https://sparai-backend-app.onrender.com/questions/delete/:id:
- *   patch:
+ *   delete:
  *     summary: deleteing a question
  *     description: Updating a question with it's id from database via PATCH route
  *     tags:
