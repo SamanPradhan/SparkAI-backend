@@ -44,6 +44,8 @@ questionRouter.patch("/update/:id", async (req, res) => {
     res.status(400).send({ msg: error.message });
   }
 });
+
+//deleting a question - DELETE route
 questionRouter.delete("/delete/:id", async (req, res) => {
   let id = req.params.id;
   try {
