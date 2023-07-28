@@ -114,7 +114,7 @@ questionRouter.post("/add", async (req, res) => {
 
 questionRouter.get("/", async (req, res) => {
   try {
-    const { topic } = req.body;
+    const topic = req.query.topic;
     console.log(topic);
     if (!topic) {
       const getQuestion = await questionModel.find();
