@@ -14,7 +14,9 @@ interviewRouter.post("/post", async (req, res) => {
     console.log(text);
     const aiCompletion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: text,
+      prompt: `the question is-${question} and answer is-${answer}
+      provide me the feedback on scale of 10 on basis of answer,and if answer is null or empty string it means you have to give 0 marks for that particular questin only. and suggestion also
+      `,
       max_tokens: 2000,
     });
     res.json({ res: aiCompletion.data.choices[0].text });
