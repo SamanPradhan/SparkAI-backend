@@ -2,14 +2,14 @@ const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
 var cors = require("cors");
-app.use(cors());
+
 const { connection } = require("./config/db");
 const { interviewRouter } = require("./routes/interview.route");
 const { questionRouter } = require("./routes/question.route");
 const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 //home route
 app.get("/", (req, res) => {
   res.send("home route");
