@@ -64,7 +64,7 @@ interviewRouter.post("/post", async (req, res) => {
     const aiCompletion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `the question is-${question} and answer is-${answer}
-      provide me the feedback on scale of 10 on basis of answer,and if answer is null or empty string it means you have to give 0 marks for that particular question only. In next line give the detailed feedback and suggestions about the answer with the improvement needed.
+      provide me the feedback on scale of 10 on basis of answer,and if answer is null or empty string it means you have to give 0 marks for that particular question only in the first line in this format, e.g. marks: 7/10. In next line give the detailed feedback and suggestions about the answer with the improvement needed.
       `,
       max_tokens: 2000,
     });
