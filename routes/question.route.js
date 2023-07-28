@@ -150,8 +150,7 @@ questionRouter.get("/", async (req, res) => {
  *               type: string
  *               description: The id of question we want to update
  *
- *         example:
- *           id: : "1"
+ *
  *     responses:
  *       200:
  *         description: Question is updated
@@ -206,8 +205,7 @@ questionRouter.patch("/update/:id", async (req, res) => {
  *               type: string
  *               description: The id of question we want to delete
  *
- *         example:
- *           id: : "1544d4d44"
+ *
  *     responses:
  *       200:
  *         description: Question is deleted
